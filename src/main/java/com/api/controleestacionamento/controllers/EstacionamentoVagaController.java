@@ -60,7 +60,7 @@ public class EstacionamentoVagaController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> detelarVagaSelecionada(@PathVariable(value = "id") UUID id){
+    public ResponseEntity<Object> deletarVagaSelecionada(@PathVariable(value = "id") UUID id){
         Optional<EstacionamentoVagaModel> estacionamentoVagaModelOptional = estacionamentoVagaService.findById(id);
         if(!estacionamentoVagaModelOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("O registro da vaga não foi encontrado.");
